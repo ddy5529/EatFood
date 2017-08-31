@@ -1,0 +1,4 @@
+ddy:
+   swagger:
+      basePackage: com.ddy.EatFood
+      version: 0.2
