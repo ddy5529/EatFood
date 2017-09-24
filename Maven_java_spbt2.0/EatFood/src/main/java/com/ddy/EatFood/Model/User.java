@@ -1,9 +1,9 @@
-package com.ddy.EatFood.model;
+package com.ddy.EatFood.Model;
 
 public class User {
-    long id;
-    String name;
-    long age;
+    private long id;
+    private String name;
+    private long age;
 
     public long getId() {
         return id;

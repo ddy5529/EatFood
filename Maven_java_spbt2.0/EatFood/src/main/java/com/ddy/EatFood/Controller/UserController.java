@@ -1,6 +1,6 @@
 package com.ddy.EatFood.Controller;
 
-import com.ddy.EatFood.model.User;
+import com.ddy.EatFood.Model.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
