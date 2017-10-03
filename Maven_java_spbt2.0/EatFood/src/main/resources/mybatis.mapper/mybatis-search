@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ddy.EatFood.Dao.SearchDao">
+    <!--<resultMap id="bean" type="com.xu.model.Role">-->
+        <!--<id column="id" property="id" jdbcType="INTEGER"/>-->
+        <!--<result column="d_name" property="d_name" jdbcType="VARCHAR"/>-->
+        <!--<result column="d_title" property="d_title" jdbcType="VARCHAR"/>-->
+        <!--<result column="d_age" property="d_age" jdbcType="INTEGER"/>-->
+        <!--<result column="creatdate" property="creatdate" jdbcType="DATE"/>-->
+    <!--</resultMap>-->
+
+    <!--<sql id="column_list">-->
+        <!--d_id,d_name,d_title,d_age-->
+    <!--</sql>-->
+    <!--<sql id="table_name">-->
+        <!--ddy_springboot_table-->
+    <!--</sql>-->
+    <resultMap id="bean" type="java.lang.String"></resultMap>
+    <select id="get" resultMap="bean" useCache="true">
+        SELECT * FROM Person WHERE name=#{name};
+    </select>
+    <!--<select id="get" parameterType="java.lang.Integer" resultMap="bean" useCache="true">-->
+        <!--SELECT-->
+        <!--<include refid="column_list"/>-->
+        <!--FROM-->
+        <!--<include refid="table_name"/>-->
+        <!--WHERE d_id=#{d_id}-->
+    <!--</select>-->
+    <!--<select id="findAll" resultMap="bean" useCache="true">-->
+        <!--SELECT-->
+        <!--<include refid="column_list"/>-->
+        <!--FROM-->
+        <!--<include refid="table_name"/>-->
+
+    <!--</select>-->
+    <!--<insert id="insert" parameterType="com.xu.model.Role" useGeneratedKeys="true" keyProperty="d_id"-->
+            <!--keyColumn="d_id" flushCache="true">-->
+        <!--<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="d_id">-->
+            <!--SELECT LAST_INSERT_ID() as ID-->
+        <!--</selectKey>-->
+        <!--insert into-->
+        <!--<include refid="table_name"/>-->
+        <!--(-->
+        <!--<include refid="column_list"/>-->
+        <!--)-->
+        <!--values-->
+        <!--(#{d_id,jdbcType=INTEGER},#{d_name,jdbcType=VARCHAR},#{d_title,jdbcType=VARCHAR},#{d_age,jdbcType=VARCHAR})-->
+    <!--</insert>-->
+    <!--<delete id="delete">-->
+        <!--DELETE FROM-->
+        <!--<include refid="table_name"/>-->
+        <!--WHERE d_id = #{d_id,jdbcType=INTEGER}-->
+    <!--</delete>-->
+    <!--<update id="update" parameterType="com.xu.model.Role" flushCache="true" keyColumn="d_id" keyProperty="d_id">-->
+        <!--update-->
+        <!--<include refid="table_name"/>-->
+        <!--SET-->
+        <!--d_name = #{d_name,jdbcType=VARCHAR},-->
+        <!--d_title = #{d_title,jdbcType=VARCHAR},-->
+        <!--d_age = #{d_age,jdbcType=VARCHAR}-->
+        <!--where d_id = #{d_id,jdbcType=INTEGER}-->
+    <!--</update>-->
+
+</mapper>

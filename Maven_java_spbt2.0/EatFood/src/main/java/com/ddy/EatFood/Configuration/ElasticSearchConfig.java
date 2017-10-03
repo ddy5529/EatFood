@@ -22,7 +22,5 @@ public class ElasticSearchConfig {
         TransportClient client=new PreBuiltTransportClient(settings);
         client.addTransportAddress(node);
         return client;
-    }
-
 
 }
