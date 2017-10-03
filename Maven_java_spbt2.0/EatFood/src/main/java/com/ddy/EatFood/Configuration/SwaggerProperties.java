@@ -5,12 +5,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "ddy.swagger")//spring-boot-configuration-processor   ,在配置文件中设置的定义
 public class SwaggerProperties {
     private String author = "ddy";
-    private String blogUrl = "com.ddy.EatFood.Configuration";
+    private String blogUrl = "https://github.com/ddy5529/MyBolg/issues/1";
     private String email = "1171148438@qq.com";
     private String version = "1.0";
     private String description = "快速搭建环境";
     private String title = "通用Spring Boot框架";
-    private String termsOfServiceUrl = "";
+    private String termsOfServiceUrl = "https://github.com/ddy5529";
     private String basePackage = "com.ddy.EatFood.Configuration";
 
     public String getAuthor() {

@@ -23,6 +23,7 @@ public class Swagger2 {
     @Bean
     public Docket createRestApi() {         //通过createRestApi函数创建Docket的Bean
         return new Docket(DocumentationType.SWAGGER_2)
+//                .host("ddy")
                 .apiInfo(apiInfo())
                 .select().apis(RequestHandlerSelectors.basePackage(config.getBasePackage()))          //select()函数返回一个ApiSelectorBuilder实例用来控制哪些接口暴露给Swagger来展现，本例采用指定扫描的包路径来定义，Swagger会扫描该包下所有Controller定义的API，并产生文档内容（除了被@ApiIgnore指定的请求）。
                 .paths(PathSelectors.any()).build();
