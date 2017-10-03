@@ -5,10 +5,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ElasticSearchConfig {
-    @Bean
-    public TransportClient client(){
-
-    }
+//    @Bean
+//    public TransportClient client(){
+//
+//    }
 
 
 }
