@@ -2,6 +2,7 @@ package com.ddy.EatFood.Controller;
 
 import com.ddy.EatFood.Server.SearchInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,16 +24,26 @@ import org.springframework.web.bind.annotation.RestController;
     })
 * */
 
+//@Controller 注解需要配合@ResponseBody这个类来配合使用
 @RestController
 @RequestMapping("/search")
 public class SearchController {
 
+    @Value("${ddy.name}")
+    private String ddy_name;
+
     @Autowired
-    SearchInfo searchInfo;
+    private SearchInfo searchInfo;
 
     @RequestMapping(value = "/getWaterInfo",method = RequestMethod.POST)
     public String Search(@PathVariable String water_name){
 
         return searchInfo.getInfo(water_name);
+    }
+
+    @RequestMapping(value = "/getDdy_name",method = RequestMethod.GET)
+    public String getDdy_name(){
+
+        return ddy_name;
     }
 }
