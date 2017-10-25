@@ -1,0 +1,30 @@
+ddy:
+   swagger:
+      basePackage: com.ddy.EatFood
+      version: 0.2
+
+Server:
+  port: 8060
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/eatfood?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: ddy5529
+    driverClassName: com.mysql.jdbc.Driver
+  freemarker:
+    prefer-file-system-access: false
+
+mybatis:
+  mapper-locations: classpath*:mybatis/mapper/*.xml
+
+ddy:
+  name: ddy
+#logging:
+#  file: logs/system.log
+#  level:
+#    root: INFO
+#    org.springframework.web: DEBUG
+#    org.mybatis: DEBUG
+#    org.apache.ibatis: DEBUG
+

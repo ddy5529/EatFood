@@ -26,20 +26,20 @@ public class HelloController {
         return "雷  猴  啊";
     }
 
-    @Autowired
-    private TransportClient client;
-
-    @GetMapping("/get/book/novel")
-    @ResponseBody
-    public ResponseEntity get(@RequestParam(name = "id",defaultValue = "")String id ){
-        if (id.isEmpty()){
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
-        GetResponse response=this.client.prepareGet("book","novel",id)
-                .get();
-        if (!response.isExists()){
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity(response.getSource(), HttpStatus.OK);
-    }
+//    @Autowired
+//    private TransportClient client;
+//
+//    @GetMapping("/get/book/novel")
+//    @ResponseBody
+//    public ResponseEntity get(@RequestParam(name = "id",defaultValue = "")String id ){
+//        if (id.isEmpty()){
+//            return new ResponseEntity(HttpStatus.NOT_FOUND);
+//        }
+//        GetResponse response=this.client.prepareGet("book","novel",id)
+//                .get();
+//        if (!response.isExists()){
+//            return new ResponseEntity(HttpStatus.NOT_FOUND);
+//        }
+//        return new ResponseEntity(response.getSource(), HttpStatus.OK);
+//    }
 }
