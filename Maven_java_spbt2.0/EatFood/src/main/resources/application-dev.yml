@@ -1,10 +1,11 @@
 ddy:
+   name: ddy
    swagger:
       basePackage: com.ddy.EatFood
       version: 0.2
 
 Server:
-  port: 8070
+  port: 80
 
 spring:
   datasource:
@@ -18,13 +19,12 @@ spring:
 mybatis:
   mapper-locations: classpath*:mybatis/mapper/*.xml
 
-ddy:
-  name: ddy
-#logging:
-#  file: logs/system.log
-#  level:
-#    root: INFO
-#    org.springframework.web: DEBUG
-#    org.mybatis: DEBUG
-#    org.apache.ibatis: DEBUG
+
+logging:
+  file: logs/system.log
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.mybatis: DEBUG
+    org.apache.ibatis: DEBUG
 

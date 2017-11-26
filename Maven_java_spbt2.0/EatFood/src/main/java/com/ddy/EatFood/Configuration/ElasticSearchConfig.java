@@ -12,19 +12,7 @@ import java.net.UnknownHostException;
 
 @Configuration
 public class ElasticSearchConfig {
-<<<<<<< HEAD
-    @Bean
-    public TransportClient client() throws UnknownHostException {
-        InetSocketTransportAddress node = new InetSocketTransportAddress(
-                InetAddress.getByName("localhost"),
-                9300
-        );
-        Settings settings = Settings.builder().put("wali").build();
-        TransportClient client = new PreBuiltTransportClient(settings);
-        client.addTransportAddress(node);
-        return client;
-    }
-=======
+
 //    @Bean
 //    public TransportClient client() throws UnknownHostException {
 //        InetSocketTransportAddress node = new InetSocketTransportAddress(
@@ -36,6 +24,5 @@ public class ElasticSearchConfig {
 //        client.addTransportAddress(node);
 //        return client;
 //    }
->>>>>>> 3967f03851ca7d42e17cdd671bdf610b6760b590
 
 }

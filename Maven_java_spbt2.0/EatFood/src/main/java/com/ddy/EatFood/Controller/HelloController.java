@@ -33,7 +33,7 @@ public class HelloController {
 //    @ResponseBody
 //    public ResponseEntity get(@RequestParam(name = "id",defaultValue = "")String id ){
 //        if (id.isEmpty()){
-//            return new ResponseEntity(HttpStatus.NOT_FOUND);
+//            return new ResponseEntity(HttpStatus.NOT_FOUND  );
 //        }
 //        GetResponse response=this.client.prepareGet("book","novel",id)
 //                .get();
