@@ -11,7 +11,7 @@ public class SwaggerProperties {
     private String description = "快速搭建环境";
     private String title = "通用Spring Boot框架";
     private String termsOfServiceUrl = "https://github.com/ddy5529";
-    private String basePackage = "com.ddy.EatFood.Configuration";
+    private String basePackage = "com.ddy.EatFood";
 
     public String getAuthor() {
         return author;

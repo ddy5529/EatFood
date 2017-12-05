@@ -1,16 +1,17 @@
 package com.ddy.EatFood.Controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
+@Controller
 public class WelcomeController {
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/",method= RequestMethod.GET)
     public String Welcome(){
-        return "Nice to Meet you ! My name is DDY.Welcome to my word! \n"+
-                "If you forger swagger-ui ,you can input webAddress http://localhost:8080/swagger-ui.html";
+        return "index";
     }
 }
