@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
+    <title>Vue投票网页</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+    <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="header"><p th:text="'Hello, ' + ${myname} + '!'" /></div>
+"Nice to Meet you ! My name is DDY.Welcome to my word! \n"+
+"If you forger swagger-ui ,you can input webAddress http://localhost:8080/swagger-ui.html";
+<div id="app">
+    <p>{{ message }}</p>
+    <ol>
+        <li v-for="site in sites">
+            {{ site.name }}
+        </li>
+    </ol>
+
+    <a href="https://home.console.aliyun.com/new#/">阿里云控制台</a><br/>
+    <a href="http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index">微信公众号调试接口</a><br/>
+    <a href="http://www.5442.com/showpic.html?http://pic.ytqmx.com:82/2013/0619/12/09.jpg">刺客信条的图片</a><br/>
+    <button v-on:click="counter += 1">增加 1</button>
+    <p>这个按钮被点击了 {{ counter }} 次。</p>
+    <button v-on:click="submitform">提交</button>
+
+</div>
+<script>
+    var app =new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!',
+            counter: 0,
+            sites: [
+                {name: 'hello1'},
+                {name: 'hello2'},
+                {name: 'hello3'}
+            ]
+        },
+        methods: {
+            submitform: function (event) {
+                // `this` 在方法里指当前 Vue 实例
+                alert('Hello ' + this.name + '!')
+                // `event` 是原生 DOM 事件
+                if (event) {
+                    alert(event.target.tagName)
+                }
+            }
+        }
+    })
+    // 也可以用 JavaScript 直接调用方法
+    app.submitform()
+</script>
+</body>

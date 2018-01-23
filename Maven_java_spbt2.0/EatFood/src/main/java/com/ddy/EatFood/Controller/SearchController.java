@@ -4,10 +4,7 @@ import com.ddy.EatFood.Server.SearchInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /*
@@ -35,15 +32,33 @@ public class SearchController {
     @Autowired
     private SearchInfo searchInfo;
 
-    @RequestMapping(value = "/getWaterInfo",method = RequestMethod.POST)
-    public String Search(@PathVariable String water_name){
+    @RequestMapping(value = "/getWaterInfo/{water_name}",method = RequestMethod.POST)
+    public String Search(@PathVariable("water_name") String water_name){
 
         return searchInfo.getInfo(water_name);
     }
 
-    @RequestMapping(value = "/getDdy_name",method = RequestMethod.GET)
-    public String getDdy_name(){
+    //以下为遵循springboot（RESTful风格）的接口的写法
+    //localhost:8060/search/getDdy_name/hello
+    @RequestMapping(value = "/getDdy_name/{get_ddy_name}",method = RequestMethod.GET)
+    public String getDdy_name(@PathVariable("get_ddy_name") String get_ddy_name){
 
-        return ddy_name;
+        return ddy_name+get_ddy_name;
+    }
+
+    //以下为传统的get传参的方法
+    //localhost:8060/search/getDdy_name2?dname=ddy5529
+    @RequestMapping(value = "/getDdy_name2",method = RequestMethod.GET)
+    public String getDdy_name2(@RequestParam("dname") String myName){//这个两个值不需要一致，会在spring boot中会对两个参数进行映射
+
+        return "name："+myName;
+    }
+
+    //以下为上一种的进阶版本，即给传入的值赋予初值
+//    @GetMapping  这是一种组合注解，即限定方法的类型 类似的还有 PutMapping,PostMapping等7种方式
+    @RequestMapping(value = "/getDdy_name21",method = RequestMethod.GET)
+    public String getDdy_name21(@RequestParam(value="dname",required = false,defaultValue = "me") String myName){//这个两个值不需要一致，会在spring boot中会对两个参数进行映射
+
+        return "name："+myName;
     }
 }
